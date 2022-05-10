@@ -1,0 +1,12 @@
+{
+  "name": "cif-dist-long-lib",
+  "version": "1.0.0",
+  "files": [
+    "cif_dist_long_lib_bg.wasm",
+    "cif_dist_long_lib.js",
+    "cif_dist_long_lib.d.ts"
+  ],
+  "module": "cif_dist_long_lib.js",
+  "types": "cif_dist_long_lib.d.ts",
+  "sideEffects": false
+}
