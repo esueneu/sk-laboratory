@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./style.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>S.K. Lab.</title>
+</head>
+<body>
+
+	<div class="title">
+		Bioinformatics tool playground
+	</div>
+
+	<br>
+
+	<div class="goToHome">
+		<a href="./index.html">HOME</a>
+	</div>
+
+	<div class="intro">
+		<p style="font-size:min(3vw,1.25rem); font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Arial;font-weight:bold;text-align:center;">Try one of my programs for bio-data analysis.</p>
+		<table>
+			<tr>
+				<td>
+					<img src="./image/protein_ribonmodel.png" style="width:12vw; height:12vw;">
+				</td>
+				<td>
+					If you are interested in the biologocal-data analyse tools that have been built by me, you can try one of them here!: A simple and small program which calculates the longest distance among α-carbon atoms in residues of a protein crystallographic structure.
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<br>
+
+	<div class="fileInput">
+		<p>
+			<p style="font-size:min(3vw,1.25rem); font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Arial; font-weight:bold; text-align:center; display:block;">File input</p>
+			<label style="white-space:pre-wrap;">mmCIF file          : </label>
+			<input id="inputFile" type="file" name="fasta" style="display:none" accept=".cif, .pdbx"></input>
+			<label id="inputLabel" for="inputFile" class="customInput">Select File ... </label>
+			<br><br>
+			<label style="white-space:pre-wrap;">Use example dataset : </label>
+			<input type="checkbox" id="exampleFile" name="customCheckbox">
+			<label for="exampleFile" class="customCheckbox"></label>
+			<br><br>
+			<label style="white-space:pre-wrap;">Chain ID            : </label>
+			<input id="inputChainId" type="text" class="customTextBox" value="A"></input>
+		</p>
+	</div>
+
+	<br>
+
+	<a id="runProgram" class="customButton" onclick = "showResult()">RUN</a>
+
+	<div class="intro">
+		<p style="font-size:min(3vw,1.25rem); font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Arial;font-weight:bold;text-align:center;">Result</p>
+		<pre id="outputFile" >Result :</pre>
+	</div>
+
+	<script type="module">
+	import init, { longest_distance_calculator_in_mmcif, get_example_data } from "./pkg/cif_dist_long_lib.js";
+
+	var input_text;
+	document.getElementById( "inputFile" ).onchange = async function () {
+		document.getElementById( "inputFile"  ).disabled          = false;
+		document.getElementById( "inputLabel" ).innerHTML         = this.files[ 0 ].name;
+		document.getElementById( "inputLabel" ).style.borderColor = "#FFFFFF";
+		document.getElementById( "inputLabel" ).style.color       = "#FFFFFF";
+		document.getElementById( "inputLabel" ).style.cursor      = "pointer";
+		input_text = await ( this.files[ 0 ] ).text();
+		console.log( this.files[ 0 ].name + " was input." );
+		//document.getElementById( "fileOutput"  ).innerHTML = input_text;
+	};
+
+	var opt_c;
+	var result_text;
+	const showResult = function() {
+		init().then( () => {
+			opt_c = document.getElementById( "inputChainId" ).value;
+			console.log( "Chain ID : " + opt_c );
+			result_text = longest_distance_calculator_in_mmcif( input_text, opt_c );
+			document.getElementById( "outputFile"  ).innerHTML = result_text;
+		} );
+	}
+	window.showResult = showResult;
+	export { showResult };
+
+	/* Example data handling. */
+	document.getElementById( "exampleFile" ).onchange = function () {
+		if( document.getElementById( "inputLabel" ).style.color != "gray" ) {
+			/* If the box's color is NOT gray, make it gray and cursor disabled. */
+			document.getElementById( "inputFile"  ).disabled  = true;
+			document.getElementById( "inputLabel" ).innerHTML = "example.cif";
+			document.getElementById( "inputLabel" ).style.borderColor = "gray";
+			document.getElementById( "inputLabel" ).style.color       = "gray";
+			document.getElementById( "inputLabel" ).style.cursor      = "not-allowed";
+			/* Then, the example data is input. */
+			init().then( () => { input_text = get_example_data(); } );
+			console.log( "Example data was input" );
+		} else {
+			/* Else, make the box's color white and cursor abled. */
+			document.getElementById( "inputFile"  ).disabled          = false;
+			document.getElementById( "inputLabel" ).innerHTML         = "Select File ...";
+			document.getElementById( "inputLabel" ).style.borderColor = "#FFFFFF";
+			document.getElementById( "inputLabel" ).style.color       = "#FFFFFF";
+			document.getElementById( "inputLabel" ).style.cursor      = "pointer";
+			/* Then, the input file information is cleared. */
+			document.getElementById( "inputFile" ).value = "";
+			input_text = "";
+			console.log( "Input file data was cleared." );
+		}
+	};
+
+	</script>
+</body>
+</html>

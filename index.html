@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./style.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>S.K. Lab.</title>
+</head>
+<body>
+		<div class="title">
+			S.K. Laboratory
+		</div>
+
+		<br>
+
+		<div class="intro">
+			<p style="font-size:1.25rem;font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Arial;font-weight:bold;text-align:center;">Welcome !</p>
+			Hello. Welcome to my laboratory! I am Shintaro, just a peason learning and researching Bioinformatics or Computational Biology (protein sequence analyse, structural analyse and molecular evolution). I also enjoy drawing (person, animal and fanart of a vodeo game etc.) as a hobbying artist, mainly working on traditional art by using ballpoint pens and alcohol-based ink pens. Feel free to look in my works below! Enjoy.
+		</div>
+
+		<br>
+
+		<div class="snsLink">
+			<p style="font-size:1.25rem; font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Arial;font-weight:bold;text-align:center;display:block;">Links</p>
+			<table style="width:100%;max-width:50vw;">
+				<tr>
+					<td>
+						<a href="https://twitter.com/esueneu" target="_blank" rel="noopener noreferrer">
+							<img class="twitter">
+						</a>
+					</td>
+					<td>
+						<a href="https://www.deviantart.com/esueneu" target="_blank" rel="noopener noreferrer">
+							<img class="deviantArt">
+						</a>
+					</td>
+					<td>
+						<a href="https://github.com/esueneu" target="_blank" rel="noopener noreferrer">
+							<img class="gitHub">
+						</a>
+					</td>
+					<td>
+						<a href="#" style="cursor:not-allowed;" target="_blank" rel="noopener noreferrer">
+							<img class="instagram">
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<br>
+
+		<div class="bioTool">
+			<p style="font-size:1.25rem;font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Arial;font-weight:bold;text-align:center;">Bioinformatics tool playground</p>
+			<a href="./biotool.html"  class="clickHere">Click here !</a>
+		</div>
+
+		<div class="bioTool">
+			<p style="font-size:1.25rem;font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Arial;font-weight:bold;text-align:center;">Original fonts sandbox</p>
+			<a href="#"  class="clickHere" style="cursor:not-allowed; animation-duration:1.25s;">Coming soon ...</a>
+		</div>
+
+		<p id="time" class="time">
+			KETER
+		</p>
+</body>
+<script>
+	function showTime() {
+		var now    = new Date();
+		var now_y  = 1999; //now.getFullYear();
+		var now_m  = now.getMonth();
+		var now_d  = now.getDay();
+		var now_h  = now.getHours();
+		var now_M  = now.getMinutes();
+		var now_s  = now.getSeconds();
+		var msg    = now_y + "/" + now_m + "/" + now_d + "-" + now_h + ":" + now_M + ":" + now_s;
+		document.getElementById( "time" ).innerHTML = msg;
+	}
+	setInterval( "showTime()", 500 );
+</script>
+</html>
