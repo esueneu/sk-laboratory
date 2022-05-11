@@ -11,12 +11,18 @@ a img {
 	border-radius : 10px;
 }
 
+table {
+	margin          : auto; 
+	border-collapse : separate;
+	border-spacing  : 5vw 0px;
+}
+
 td img {
 	background-size   : cover;
 	width             : 5vw;
 	height            : 5vw;
-	min-width         : 30px;
-	min-height        : 30px;
+	min-width         : 45px;
+	min-height        : 45px;
 	background-repeat : no-repeat;
 	text-align        : center;
 	vertical-align    : middle;
@@ -113,6 +119,7 @@ body {
 	margin              : 0 auto;
 	width               : 100%;
 	max-width           : 50vw;
+	min-width           : 300px;
 	text-align          : center;
 	/* Animating section */
 	animation-name      : AnimFadeUp;
@@ -321,7 +328,7 @@ input[type=checkbox]:checked + .customCheckbox::after {
 	right                  : 0px;
 }
 
-@media screen and ( max-width : 428px ) {
+@media screen and ( max-width : 770px ) {
 
 	.title {
 		font-size           : 2rem;
@@ -370,6 +377,19 @@ input[type=checkbox]:checked + .customCheckbox::after {
 		/* Animating section */
 		animation-name      : AnimFadeUp;
 		animation-duration  : 3.5s;
+		animation-fill-mode : forwards;
+		opacity             : 0;
+	}
+
+	.snsLink {
+		color               : #FFFFFF;
+		background-color    : rgba( 0, 0, 0, 0.6 );
+		min-width           : 90%;
+		padding-bottom      : 1rem;
+		text-align          : center;
+		/* Animating section */
+		animation-name      : AnimFadeUp;
+		animation-duration  : 1.5s;
 		animation-fill-mode : forwards;
 		opacity             : 0;
 	}
