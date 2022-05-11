@@ -46,10 +46,8 @@ pre {
 
 body {
 	background-image  : url(./image/bg_image.jpg);
-	background-size   : cover;
+	background-size   : 100%;
 	background-repeat : repeat-y;
-	height            : 100%;
-	overflow-x: hidden;
 }
 
 .title {
@@ -177,6 +175,7 @@ body {
 
 .ribonModel {
 	text-align          : center;
+	margin              : 0 auto;
 	/* Animating section */
 	animation-name      : AnimFadeUp;
 	animation-duration  : 4.5s;
