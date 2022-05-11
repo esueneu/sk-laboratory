@@ -27,7 +27,7 @@
 					<img src="./image/protein_ribonmodel.png" style="width:12vw; height:12vw;">
 				</td>
 				<td>
-					If you are interested in the biologocal-data analyse tools that have been built by me, you can try one of them here!: A simple and small program which calculates the longest distance among α-carbon atoms in residues of a protein crystallographic structure.
+					If you are interested in the biologocal-data analyse tools that have been built by me, you can try one of them here! : A simple and small program which calculates the longest distance among α-carbon atoms in amino acid residues of a protein crystallographic structure.
 				</td>
 			</tr>
 		</table>
@@ -37,7 +37,7 @@
 
 	<div class="fileInput">
 		<p>
-			<p style="font-size:min(3vw,1.25rem); font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Arial; font-weight:bold; text-align:center; display:block;">File input</p>
+			<p style="font-size:1.25rem; font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Arial; font-weight:bold; text-align:center; min-width:90%;">File input</p>
 			<label style="white-space:pre-wrap;">mmCIF file          : </label>
 			<input id="inputFile" type="file" name="fasta" style="display:none" accept=".cif, .pdbx"></input>
 			<label id="inputLabel" for="inputFile" class="customInput">Select File ... </label>
@@ -56,9 +56,13 @@
 	<a id="runProgram" class="customButton" onclick = "showResult()">RUN</a>
 
 	<div class="intro">
-		<p style="font-size:min(3vw,1.25rem); font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Arial;font-weight:bold;text-align:center;">Result</p>
-		<pre id="outputFile" >Result :</pre>
+		<p style="font-size:1.25rem; font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Arial;font-weight:bold;text-align:center; min-width:90%;">Result</p>
+		<pre id="outputFile" >Distance  :<br>Residue 1 :<br>Residue 2 :</pre>
 	</div>
+
+	<p id="time" class="time">
+		KETER
+	</p>
 
 	<script type="module">
 	import init, { longest_distance_calculator_in_mmcif, get_example_data } from "./pkg/cif_dist_long_lib.js";
@@ -113,6 +117,22 @@
 			console.log( "Input file data was cleared." );
 		}
 	};
+
+	</script>
+	<script>
+
+		function showTime() {
+		var now    = new Date();
+		var now_y  = 2001; //now.getFullYear();
+		var now_m  = now.getMonth();
+		var now_d  = now.getDay();
+		var now_h  = now.getHours();
+		var now_M  = now.getMinutes();
+		var now_s  = now.getSeconds();
+		var msg    = now_y + "/" + now_m + "/" + now_d + "-" + now_h + ":" + now_M + ":" + now_s;
+		document.getElementById( "time" ).innerHTML = msg;
+		}
+		setInterval( "showTime()", 500 );
 
 	</script>
 </body>
