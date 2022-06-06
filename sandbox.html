@@ -55,5 +55,25 @@
 		</table>
 	</div>
 
+	<p id="time" class="time">
+		time
+	</p>
+
 </body>
+<script>
+
+		function showTime() {
+		var now    = new Date();
+		var now_y  = 2000; //now.getFullYear();
+		var now_m  = now.getMonth();
+		var now_d  = now.getDay();
+		var now_h  = now.getHours();
+		var now_M  = now.getMinutes();
+		var now_s  = now.getSeconds();
+		var msg    = now_y + "/" + now_m + "/" + now_d + "-" + now_h + ":" + now_M + ":" + now_s;
+		document.getElementById( "time" ).innerHTML = msg;
+	}
+	setInterval( "showTime()", 500 );
+
+</script>
 </html>

@@ -70,7 +70,7 @@ body {
 	text-align          : center;
 	/* Animating section */
 	animation-name      : AnimFadeUp;
-	animation-duration  : 1.0s;
+	animation-duration  : 0.5s;
 	animation-fill-mode : forwards;
 	opacity             : 0;
 }
@@ -89,7 +89,7 @@ body {
 	text-align          : center;
 	/* Animating section */
 	animation-name      : AnimFadeUp;
-	animation-duration  : 3.5s;
+	animation-duration  : 1.0s;
 	animation-fill-mode : forwards;
 	opacity             : 0;
 }
@@ -113,7 +113,7 @@ body {
 	text-align          : left;
 	/* Animating section */
 	animation-name      : AnimFadeUp;
-	animation-duration  : 3.5s;
+	animation-duration  : 1.0s;
 	animation-fill-mode : forwards;
 	opacity             : 0;
 }
@@ -131,7 +131,7 @@ body {
 	text-align          : center;
 	/* Animating section */
 	animation-name      : AnimFadeUp;
-	animation-duration  : 1.5s;
+	animation-duration  : 1.0s;
 	animation-fill-mode : forwards;
 	opacity             : 0;
 }
@@ -178,7 +178,7 @@ body {
 	text-align          : center;
 	/* Animating section */
 	animation-name      : AnimFadeUp;
-	animation-duration  : 0.5s;
+	animation-duration  : 1.0s;
 	animation-fill-mode : forwards;
 	opacity             : 0;
 }
@@ -188,7 +188,7 @@ body {
 	margin              : 0 auto;
 	/* Animating section */
 	animation-name      : AnimFadeUp;
-	animation-duration  : 4.5s;
+	animation-duration  : 1.0s;
 	animation-fill-mode : forwards;
 	opacity             : 0;
 }
@@ -212,7 +212,7 @@ body {
 	text-align          : left;
 	/* Animating section */
 	animation-name      : AnimFadeUp;
-	animation-duration  : 3.0s;
+	animation-duration  : 1.0s;
 	animation-fill-mode : forwards;
 	opacity             : 0;
 }
@@ -422,7 +422,7 @@ input[type=checkbox]:checked + .customCheckbox::after {
 		text-align          : center;
 		/* Animating section */
 		animation-name      : AnimFadeUp;
-		animation-duration  : 3.5s;
+		animation-duration  : 1.0s;
 		animation-fill-mode : forwards;
 		opacity             : 0;
 	}
@@ -441,7 +441,7 @@ input[type=checkbox]:checked + .customCheckbox::after {
 		text-align          : left;
 		/* Animating section */
 		animation-name      : AnimFadeUp;
-		animation-duration  : 3.5s;
+		animation-duration  : 1.0s;
 		animation-fill-mode : forwards;
 		opacity             : 0;
 	}
@@ -454,7 +454,7 @@ input[type=checkbox]:checked + .customCheckbox::after {
 		text-align          : center;
 		/* Animating section */
 		animation-name      : AnimFadeUp;
-		animation-duration  : 1.5s;
+		animation-duration  : 1.0s;
 		animation-fill-mode : forwards;
 		opacity             : 0;
 	}
@@ -467,7 +467,7 @@ input[type=checkbox]:checked + .customCheckbox::after {
 		text-align          : center;
 		/* Animating section */
 		animation-name      : AnimFadeUp;
-		animation-duration  : 0.5s;
+		animation-duration  : 1.0s;
 		animation-fill-mode : forwards;
 		opacity             : 0;
 	}
@@ -486,7 +486,7 @@ input[type=checkbox]:checked + .customCheckbox::after {
 		line-height         : 1.2rem;
 		/* Animating section */
 		animation-name      : AnimFadeUp;
-		animation-duration  : 3.0s;
+		animation-duration  : 1.0s;
 		animation-fill-mode : forwards;
 		opacity             : 0;
 	}
